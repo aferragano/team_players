@@ -3,6 +3,7 @@ import {Card, CardMedia, CardText, CardActions, CardTitle } from 'material-ui/Ca
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
+import { blue200, blue900 } from 'material-ui/styles/colors';
 
 const styles = {
 	chip: {
@@ -23,22 +24,91 @@ export default class Person extends Component {
 	render() {
 			return (
 			<Card>
-				<CardMedia
-			      overlay={<CardTitle title="Anthony " subtitle="Communication: 80 - awesomness 100 " />}
-			    >
-			    <img src="city.jpg" />
-			   </CardMedia>
-	
-			    <CardText>
-			      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-			      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-			      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-			    </CardText>
-			    <CardActions>
-			      
-			    </CardActions>
-			</Card>
+        <CardMedia
+          overlay={<CardTitle title="Anthony" subtitle="Communication: 12 - fun: 8" />}
+        >
+          <img src="city.jpg" />
+        </CardMedia>
+        <CardText>
+          <div style={styles.wrapper}>
+            <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                2
+              </Avatar>
+              Ball manipulation
+            </Chip>
+            <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Kicking abilities
+          </Chip>
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Passing abilities
+          </Chip>
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Duel/Tackling abilities
+          </Chip>
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Field speed coverage
+          </Chip>
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Blocking abilities
+          </Chip>
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Game strategy
+          </Chip>
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Playmaking risks
+          </Chip>
+          </div>
+        </CardText>
+        <CardActions>
+
+        </CardActions>
+      </Card>
 			)
 	}
 }

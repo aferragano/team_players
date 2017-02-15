@@ -1,13 +1,23 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import AppBar from 'material-ui/AppBar'
+import AppBar from 'material-ui/AppBar';
+import { List } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 
 import Person from './Person';
 import TeamStats from './Team-stats';
 import TeamList from './Team-list';
 
 export default class App extends Component {
+	getPersons() {
+		return [
+		{
+			_id: 1,
+			nickName: "Mr. Fahrenheit"
+		}
+		];
+	}
 	render() {
 		return (
 			<MuiThemeProvider>
