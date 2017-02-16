@@ -14,18 +14,18 @@ export default class App extends Component {
 		super(props);
 
 		//setting up the state
-		
+		this.state = { persons: []};
 	}
-	getPersons() {
-		return [
-		{
-			_id: 1,
-			nickName: "Mr. Fahrenheit"
-		}
-		];
-	}
+	componentWillMount() {
+		this.setState({ persons: [
+				{
+					_id: 1,
+					nickName: "Mr. Fahrenheit"
+				}
+				]});
+				}
 	renderPersons() {
-    return this.getPersons().map((person) => (
+    return this.state.persons.map((person) => (
       <TeamList key={person._id} person={person} />
     ));
   }
