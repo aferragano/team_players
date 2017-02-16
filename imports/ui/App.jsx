@@ -10,6 +10,12 @@ import TeamStats from './Team-stats';
 import TeamList from './Team-list';
 
 export default class App extends Component {
+	constructor(props) {
+		super(props);
+
+		//setting up the state
+		
+	}
 	getPersons() {
 		return [
 		{
@@ -18,6 +24,11 @@ export default class App extends Component {
 		}
 		];
 	}
+	renderPersons() {
+    return this.getPersons().map((person) => (
+      <TeamList key={person._id} person={person} />
+    ));
+  }
 	render() {
 		return (
 			<MuiThemeProvider>
@@ -30,8 +41,15 @@ export default class App extends Component {
 					<div className="row">
 
 						<div className="col s12 m7"> <Person/> </div>
+						<div className="col s12 m5"> 
+						<h2>Team List</h2>
+							<Divider/> 
+								<List>
+									{this.renderPersons()}
+								</List>
+						</div>
+						<Divider/>
 						<div className="col s12 m5"> <TeamStats/>  </div>
-						<div className="col s12 m5"> <TeamList/> </div>
 					</div>
 				</div>
 			</MuiThemeProvider>
