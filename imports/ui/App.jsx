@@ -15,7 +15,7 @@ import Person from './Person';
 import TeamStats from './Team-stats';
 import TeamList from './Team-list';
 
-export default class App extends React.Component {
+export class App extends Component {
 	constructor(props) {
 		super(props);
 
@@ -38,9 +38,10 @@ export default class App extends React.Component {
 					>
 					<div className="row">
 
-						<div className="col s12 m7"> <Person/> </div>
+						<div className="col s12 m7"> <Person /> </div>
 						<div className="col s12 m5"> 
 						<h2>Team List</h2> 
+						{this.props.children}
 						<Link to='/new' className="waves-effect wave-light btn">Add</Link>
 							<Divider/> 
 								<List>
@@ -54,15 +55,17 @@ export default class App extends React.Component {
 			</MuiThemeProvider>
 			)
 	}
+	getPeople
 }
 
 App.propTypes = {
 	persons: PropTypes.array.isRequired,
 };
 
-// export default createContainer(() => {
-// 	Meteor.subscribe('persons');
-// 	return {
-// 		persons: Persons.find({}, {sort:{ name: 1}}).fetch(),
-// 	};
-// }, App)
+export default createContainer(() => {
+	Meteor.subscribe('persons');
+	return {
+		persons: Persons.find({}, {sort:{ nickname: 1}}).fetch(),
+	};
+}, App);
+
