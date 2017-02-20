@@ -5,18 +5,26 @@ import { Persons } from '../api/persons'
 export default class New extends Component {
 	submitPerson(e){
 		e.preventDefault();
-
-		Persons.insert({
+		let person ={
 			nickname: this.refs.nickname.value,
 			team: this.refs.team.value,
 			notes: this.refs.notes.value,
 			communication: this.refs.communication.value,
 			createdAt: new Date(),
-		});
-		console.log("yey submitted");
+			owner: Meteor.userId(),
+		}
 
-		browserHistory.push('/')
+		Meteor.call('insertPerson',  person, (e) => {
+			if(e) {
+				alert("oops something went wrong here": e.reason);
+			} else {
+				alert("player added");
+				browserHistory.push('/');
+			} 
+			})
 	}
+
+	
 	render() {;
 		return (
 			<div className="row">

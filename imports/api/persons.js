@@ -8,6 +8,7 @@ const PersonsSchema = new SimpleSchema({
 	team: { type: String},
 	notes: { type: String, optional: true },
 	communication: { type: Number, defaultValue: 0 },
+	owner: {type: String },
 });
 
 Persons.attachSchema(PersonsSchema);
