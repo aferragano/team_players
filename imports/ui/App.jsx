@@ -16,6 +16,12 @@ import TeamStats from './Team-stats';
 import TeamList from './Team-list';
 import AccountsWrapper from './AccountsWrapper';
 
+const tempPerson = {
+	nickname: "Archer",
+	team: "Archer",
+	notes: "meow",
+	communication: 3,
+}
 
 
 export class App extends Component {
@@ -23,12 +29,18 @@ export class App extends Component {
 		super(props);
 
 		//setting up the state
-		this.state = { persons: []};
+		this.state = { currentPerson: tempPerson };
+		this.updateCurrentPerson = this.updateCurrentPerson.bind(this);
 	}
 	renderPersons() {
     return this.props.persons.map((person) => (
-      <TeamList key={person._id} person={person} />
+      <TeamList key={person._id} person={person} updateCurrentPerson={this.updateCurrentPerson} />
     ));
+  }
+  updateCurrentPerson(person) {
+  	this.setState({
+  		currentPerson: person,
+  	});
   }
 	render() {
 		return (
@@ -43,7 +55,7 @@ export class App extends Component {
 					</AppBar>
 					<div className="row">
 
-						<div className="col s12 m7"> <Person /> </div>
+						<div className="col s12 m7"> <Person person={this.state.currentPerson} /> </div>
 						<div className="col s12 m5"> 
 						<h2>Team List</h2> 
 						{this.props.children}
