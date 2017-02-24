@@ -6,19 +6,17 @@ import Chip from 'material-ui/Chip';
 import { blue200, blue900 } from 'material-ui/styles/colors';
 
 const styles = {
-	chip: {
-		margin: 4,
-
-	},
-	wrapper:{
-		display: 'flex',
-		flexWrapper: 'wrap',
-
-	},
-	button: {
-		margin:12,
-	}
-}
+  chip: {
+    margin: 4,
+  },
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  button: {
+    margin: 12,
+  },
+};
 
 export default class Person extends Component {
 	render() {

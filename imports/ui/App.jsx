@@ -14,6 +14,9 @@ import { Persons } from '../api/persons';
 import Person from './Person';
 import TeamStats from './Team-stats';
 import TeamList from './Team-list';
+import AccountsWrapper from './AccountsWrapper';
+
+
 
 export class App extends Component {
 	constructor(props) {
@@ -30,12 +33,14 @@ export class App extends Component {
 	render() {
 		return (
 			<MuiThemeProvider>
-				<div className="container">
+				<div className="container thing">
 				<AppBar 
 					title=" Team Application"
 					iconClassNameRight="muidocs-icon-navigation-expand-more"
-					showMenuIconButton={false}/ 
+					showMenuIconButton={false} 
 					>
+					<AccountsWrapper />
+					</AppBar>
 					<div className="row">
 
 						<div className="col s12 m7"> <Person /> </div>
