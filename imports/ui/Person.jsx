@@ -20,10 +20,11 @@ const styles = {
 
 export default class Person extends Component {
 	render() {
+    const person = this.props.person;
 			return (
 			<Card>
         <CardMedia
-          overlay={<CardTitle title="Anthony" subtitle="Communication: 12 - fun: 8" />}
+          overlay={<CardTitle title={ person.nickname } subtitle="Communication: 12 - fun: 8" />}
         >
           <img src="city.jpg" />
         </CardMedia>
@@ -34,9 +35,9 @@ export default class Person extends Component {
             style={styles.chip}
             >
               <Avatar size={32} color={blue200} backgroundColor={blue900}>
-                2
+                { person.communication }
               </Avatar>
-              Ball manipulation
+              Communication
             </Chip>
             <Chip
             backgroundColor={blue200}
@@ -47,60 +48,9 @@ export default class Person extends Component {
             </Avatar>
             Kicking abilities
           </Chip>
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Passing abilities
-          </Chip>
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Duel/Tackling abilities
-          </Chip>
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Field speed coverage
-          </Chip>
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Blocking abilities
-          </Chip>
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Game strategy
-          </Chip>
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Playmaking risks
-          </Chip>
+       
+       
+         
           </div>
         </CardText>
         <CardActions>
