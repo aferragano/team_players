@@ -61,7 +61,7 @@ export class App extends Component {
   	if(this.state.showEditPerson === true ){
   		return (<Edit currentPerson={this.state.currentPerson} showTeamStats={this.showTeamStats}/>);
   	} else {
-  		return (<TeamStats/>)
+  		return (<TeamStats persons={this.props.persons} />)
   	}
   }
 	render() {
@@ -88,13 +88,18 @@ export class App extends Component {
 								</List>
 						</div>
 						<Divider/>
-						<div className="col s12 m5"> {this.showForm()} </div>
+						
 					</div>
+					<div className="row">
+					<br/>
+					<Divider/>
+						<div className="col s12"> {this.showForm()} </div>
+					</div>
+					<Divider/>
 				</div>
 			</MuiThemeProvider>
 			)
 	}
-	getPeople
 }
 
 App.propTypes = {
