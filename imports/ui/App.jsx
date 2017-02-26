@@ -15,6 +15,7 @@ import Person from './Person';
 import TeamStats from './Team-stats';
 import TeamList from './Team-list';
 import AccountsWrapper from './AccountsWrapper';
+import Edit from './EditPerson';
 
 const tempPerson = {
 	nickname: "Archer",
@@ -29,8 +30,12 @@ export class App extends Component {
 		super(props);
 
 		//setting up the state
-		this.state = { currentPerson: tempPerson };
+		this.state = {
+		 	currentPerson: tempPerson,
+			showEditForm: false };
 		this.updateCurrentPerson = this.updateCurrentPerson.bind(this);
+		this.showEditForm = this.showEditForm.bind(this);
+		this.showTeamStats = this.showTeamStats.bind(this);
 	}
 	renderPersons() {
     return this.props.persons.map((person) => (
@@ -41,6 +46,23 @@ export class App extends Component {
   	this.setState({
   		currentPerson: person,
   	});
+  }
+  showEditForm(){
+  	this.setState({
+  		showEditPerson: true,
+  	});
+  }
+  showTeamStats(){
+  	this.setState({
+  		showEditPerson: false,
+  	});
+  }
+  showForm(){
+  	if(this.state.showEditPerson === true ){
+  		return (<Edit currentPerson={this.state.currentPerson} showTeamStats={this.showTeamStats}/>);
+  	} else {
+  		return (<TeamStats/>)
+  	}
   }
 	render() {
 		return (
@@ -55,7 +77,7 @@ export class App extends Component {
 					</AppBar>
 					<div className="row">
 
-						<div className="col s12 m7"> <Person person={this.state.currentPerson} /> </div>
+						<div className="col s12 m7"> <Person person={this.state.currentPerson} showEditForm={this.showEditForm}/>  </div>
 						<div className="col s12 m5"> 
 						<h2>Team List</h2> 
 						{this.props.children}
@@ -66,7 +88,7 @@ export class App extends Component {
 								</List>
 						</div>
 						<Divider/>
-						<div className="col s12 m5"> <TeamStats/>  </div>
+						<div className="col s12 m5"> {this.showForm()} </div>
 					</div>
 				</div>
 			</MuiThemeProvider>

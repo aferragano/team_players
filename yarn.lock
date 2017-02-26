@@ -697,6 +697,10 @@ keycode@^2.1.1:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.8.tgz#94d2b7098215eff0e8f9a8931d5a59076c4532fb"
 
+lodash.isequal@^4.4.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+
 lodash.merge@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
@@ -991,6 +995,12 @@ react-addons-transition-group@^15.0.0:
   dependencies:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
+
+react-chartjs-2@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-2.0.5.tgz#4cee4c9bff0f13637a770a0c740b48cf94d0a83f"
+  dependencies:
+    lodash.isequal "^4.4.0"
 
 react-dom@^15.4.2:
   version "15.4.2"

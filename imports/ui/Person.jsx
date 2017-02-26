@@ -19,6 +19,9 @@ const styles = {
 };
 
 export default class Person extends Component {
+  showEditForm() {
+    this.props.showEditForm()
+  }
 	render() {
     const person = this.props.person;
 			return (
@@ -54,7 +57,10 @@ export default class Person extends Component {
           </div>
         </CardText>
         <CardActions>
-
+          <RaisedButton label="Edit Person"
+          labelPosition="before"
+          style={styles.button}
+          onClick={this.showEditForm.bind(this)}/>
         </CardActions>
       </Card>
 			)
