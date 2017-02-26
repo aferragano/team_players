@@ -9,13 +9,13 @@ export default class Edit extends Component {
 		e.preventDefault();
 
 			let person = {
-			_id: this.props.currentPerson._id,
-			nickname: this.refs.nickname.value,
-			team: this.refs.team.value,
-			notes: this.refs.notes.value,
-			communication: this.refs.communication.value,
-			createdAt: new Date(),
-		}
+				_id: this.props.currentPerson._id,
+				nickname: this.refs.nickname.value,
+				team: this.refs.team.value,
+				notes: this.refs.notes.value,
+				communication: this.refs.communication.value,
+				createdAt: new Date(),
+			}
 		
 		Meteor.call('updatePerson', person, (error)=> {
 			if(error) {
@@ -61,9 +61,7 @@ export default class Edit extends Component {
 						<div className="input-field col s6">
 							<button className="btn waves-effect waves-light" type="submit" name="action"> Submit
 							<i className="material-icons right"> send</i></button>
-							
-						</div>						
-					
+						</div>
 					</div>
 
 				</form>
